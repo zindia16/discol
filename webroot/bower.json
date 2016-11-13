@@ -1,0 +1,29 @@
+{
+  "name": "Discol",
+  "description": "Discover Collaborate",
+  "main": "",
+  "keywords": [
+    "Social",
+    "Application"
+  ],
+  "authors": [
+    "Ravi S. Singh"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "angular-materialize": "^0.1.9",
+    "ngstorage": "^0.3.11",
+    "angular-material": "^1.1.1"
+  }
+}

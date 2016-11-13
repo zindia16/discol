@@ -1,0 +1,24 @@
+angular.module('LandingApp',['ngRoute','ngStorage']);
+
+angular.module('LandingApp')
+.constant('urls',{
+	api:ROOT_URL+'api/'
+})
+.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
+	$routeProvider
+		.when('/',{
+			templateUrl:'templates/home/index',
+			controller:'login'
+		})
+		.when('/login',{
+			templateUrl:'templates/users/login',
+			controller:'login'
+		})
+		.when('/signup',{
+			templateUrl:'templates/users/signup',
+			controller:'login'
+		})
+		.otherwise({
+			redirectTo:'/'
+		});
+}]);

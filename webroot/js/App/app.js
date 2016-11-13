@@ -1,0 +1,32 @@
+angular.module('App',['ngRoute','ngStorage','ngMaterial','ui.materialize']);
+angular.module('App')
+.constant('urls',{
+	api:ROOT_URL+'api/'
+})
+.config(['$routeProvider','$locationProvider','$httpProvider',function($routeProvider,$locationProvider,$httpProvider){
+
+	$routeProvider
+		.when('/',{
+			templateUrl:'templates/app/index',
+			controller:'Posts'
+		})
+		.when('/posts',{
+			templateUrl:'templates/posts/index',
+			controller:'Posts'
+		})
+		.when('/posts/add',{
+			templateUrl:'templates/posts/add',
+			controller:'Posts'
+		})
+		.when('/post/view/:id',{
+			templateUrl:'templates/post/view',
+			controller:'Post'
+		})
+		.otherwise({
+			redirectTo:'/'
+		});
+}]).run(['$localStorage','$http',function($localStorage,$http){
+	if($localStorage.token){
+		$http.defaults.headers.common.Authorization = 'Basic ' + $localStorage.token;
+	}
+}]);
